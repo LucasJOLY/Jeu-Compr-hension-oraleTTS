@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text-to-Speech</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div id="main_container">
+        <h1 class="hide" id="title">Title</h1>
+        <h2 class="hide" id="subtitle">Subtitle</h2>
+        <div class="flash-card">
+            <div class="flash-card-inner" id="inner">
+                <div class="flash-card-front" style="text-align: center;">
+                    <img class="imgFlash" id="imgFlash" src="glibLogoBlue.png" alt="image Flashcard" style="width: 100%; height: 100%;">
+                </div>
+                <div class="flash-card-back" id="back">
+                    <h1 id="card_name">Card name</h1>
+                    <p id="card_description">Card description</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="commands">
+            <input type="button" class="big-button" id="turnButton" value="Turn">
+            <div id="answerZone">
+                <label id="guessLabel" for="guess">Question</label><br />
+                <input type="text" name="guess" id="guess">
+                <p id="result"></p>
+                <input type="button" class="big-button" id="confirm" value="Confirm">
+            </div>
+            <input type="button" onclick="speak()" class="big-button" id="nextButton" value="Next Card">
+        </div>
+        <p id="score"></p>
+    </div>
+	
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=MikSI91T"></script>
+	<script>
+		function speak() {
+            responsiveVoice.speak("The golden gate is one of the greatest bridge of the US", "UK English Male");		}
+	</script>
+</body>
+</html>
