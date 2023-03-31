@@ -55,18 +55,16 @@ body {
 }
 
 .hide,
-#imgFlash,
-.flash-card-inner,
-.flash-card,
-#turnButton,
-#nextButton,
+#imgSound,
+.sound-inner,
+.sound,
 #guessLabel,
 #guess,
 #confirm {
     display: none;
 }
 
-#imgFlash, div#back.flash-card-back {
+#imgSound{
     border-radius: 1em;
     border: 2px solid black;
 }
@@ -88,28 +86,12 @@ h2 {
 #result{
     font-family: 'Baloo';
 }
-#guess,
-#confirm,
-#nextButton,
-#turnButton {
+#guess{
     border-radius: 1em;
     border-color: black;
     color: #0047AB;
 }
 
-#nextButton, #turnButton {
-    height: 6em;
-    width: 6em;
-    font-family: 'Baloo';
-}
-
-#nextButton {
-    margin-left: 2em;
-}
-
-#turnButton {
-    margin-right: 2em;
-}
 
 #commands {
     display: flex;
@@ -122,13 +104,29 @@ h2 {
     /* color: black; */
 }
 
+
+#confirm {
+    align-items: center;
+    justify-content: center;
+    background-color: #0047AB;
+    color: #F8F8FF;
+    font-family: 'Baloo';
+    border-color: darkred;
+    box-shadow: black;
+    font-size: 1vw;
+}
+#confirm::before {
+    background: #5175e9;
+}
+
+
 #confirm,
 #guess {
     margin: auto;
     font-family: 'Baloo';
 }
 
-.flash-card {
+.sound {
     background-color: transparent;
     width: 20vw;
     height: 20vw;
@@ -137,7 +135,7 @@ h2 {
     /* margin: auto; */
 }
 
-.flash-card-inner {
+.sound-inner {
     position: relative;
     width: 100%;
     height: 100%;
@@ -150,8 +148,7 @@ h2 {
 
 
 /*Positionne le devant et le dos de la flashcard */
-.flash-card-front,
-.flash-card-back {
+.sound-front{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -159,17 +156,6 @@ h2 {
     backface-visibility: hidden;
 }
 
-
-.flash-card-back,
-#back {
-    border-radius: 1em;
-    background-color: white;
-    color: #00247d;
-    /* color: black; */
-    transform: rotateY(180deg);
-    font-size: x-large;
-    font-family: 'Baloo';
-}
 
 #score {
     display: none;
@@ -280,14 +266,14 @@ button {
     text-transform: uppercase;
 }
 
-button.big-button, #confirm {
+button.big-button{
     padding: 1em 2em;
     border-radius: 1em;
     transform-style: preserve-3d;
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
-button.big-button::before, #confirm::before {
+button.big-button::before{
     position: absolute;
     content: "";
     width: 100%;
@@ -302,11 +288,11 @@ button.big-button::before, #confirm::before {
     transition: all 200ms cubic-bezier(0, 0, 1, 1);
 }
 
-button.big-button:active, #confirm:active {
+button.big-button:active{
     transform: translate(0em, 0.48em);
 }
 
-button.big-button:active::before, #confirm:active::before{
+button.big-button:active::before{
     transform: translate3d(0, 0, -1em);
 
     /*box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB)*/
@@ -615,30 +601,17 @@ button.big-button:active::before, #confirm:active::before{
         font-size: 3vw;
     }
 
-    .flash-card, .flash-card-inner {
+    .sound, .sound-inner {
         width: 65vw;
         height: 65vw;
         font-size: 1vw;
         /* margin: auto; */
     }
 
-    #back p  {
-        font-size: 3.7vw;
-        margin: 7px;
-        margin-top: 50px;
-    }
 
-    .flash-card-back,
-    #back {
-        font-size: 5vw;
-    }
 
     #result {
         font-size: 4vw;
-    }
-
-    #turnButton, #nextButton {
-        font-size: 5vw;
     }
     #container_win h1{
         color : #F8F8FF;

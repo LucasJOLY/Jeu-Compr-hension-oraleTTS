@@ -202,10 +202,10 @@ function start() {
 
         // On affiche (actuellement en none) toutes les divs requises avec des display flex  
 
-        document.getElementById("imgFlash").style.display = "block";
-        const inner = document.getElementsByClassName("flash-card-inner");
+        document.getElementById("imgSound").style.display = "block";
+        const inner = document.getElementsByClassName("sound-inner");
         inner[0].style.display = "block";
-        const card = document.getElementsByClassName("flash-card");
+        const card = document.getElementsByClassName("sound");
         card[0].style.display = "block";
 
         document.getElementById("guessLabel").style.display = "block";
@@ -292,7 +292,7 @@ function checkAnswer() {
 
     if (guess != '') {
         nbPlayedSound += 1;
-        document.getElementById("confirm").value = 'Next Question'; //On cache le bouton de validation
+        document.getElementById("confirm").innerHTML = 'Next Question'; //On cache le bouton de validation
         document.getElementById("confirm").onclick = changeSound;
 
         if (guess.toLowerCase() == (getSoundAnswerOf(currentSoundId).toLowerCase())) { //Compare la réponse du joueur avec la solution
@@ -315,7 +315,7 @@ function checkAnswer() {
     }
     if (nbPlayedSound == nbSounds) { //Si toutes les cartes ont été jouées
         resultText.innerHTML += "<br/> You finished the game!";
-        document.getElementById("confirm").value = 'Finish';
+        document.getElementById("confirm").innerHTML = 'Finish';
         scoreText.style.display = 'block';
         points = nbCorrect * 1000 - lostPoints;
         if (points < 0) {
@@ -351,7 +351,7 @@ function changeSound() {
     }
     playedSound.push(currentSoundId);
     document.getElementById("button_speak").onclick = speak;
-    document.getElementById("confirm").value = 'Confirm'; //Réaffiche le bouton valider
+    document.getElementById("confirm").innerHTML = 'Confirm'; //Réaffiche le bouton valider
     document.getElementById("confirm").onclick = checkAnswer; //Réaffiche le bouton valider
 }
 
@@ -475,7 +475,7 @@ function restart() {
 
     document.getElementById("guess").value = '';
 
-    document.getElementById("confirm").value = 'Confirm';
+    document.getElementById("confirm").innerHTML = 'Confirm';
     document.getElementById("confirm").onclick = checkAnswer;
     start();
 }
