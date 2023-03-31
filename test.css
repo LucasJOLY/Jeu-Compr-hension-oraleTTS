@@ -63,7 +63,7 @@ body {
 #guessLabel,
 #guess,
 #confirm {
-    display: flex;
+    display: none;
 }
 
 #imgFlash, div#back.flash-card-back {
@@ -145,7 +145,7 @@ h2 {
     transition: transform 0.6s;
     transform-style: preserve-3d;
     vertical-align: middle;
-    display: flex;
+    display: none;
 }
 
 
@@ -219,7 +219,7 @@ h2 {
     font-size: 30px;
 }
 
-#container_rule #p1 {
+#container_rule #p1_rules {
     position: absolute;
     top: 50%;
     left: 50%;
